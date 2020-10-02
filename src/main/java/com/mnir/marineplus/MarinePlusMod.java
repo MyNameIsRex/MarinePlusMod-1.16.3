@@ -1,8 +1,11 @@
 package com.mnir.marineplus;
 
+import com.mnir.marineplus.entities.TunaEntity;
 import com.mnir.marineplus.init.ModInits;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,7 +30,13 @@ public class MarinePlusMod
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {}
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        DeferredWorkQueue.runLater(() ->
+        {
+            GlobalEntityTypeAttributes.put(ModInits.TUNA.get(), TunaEntity.setCustomAttributes().create());
+        });
+    }
 
     private void doClientStuff(final FMLClientSetupEvent event) {}
 }
