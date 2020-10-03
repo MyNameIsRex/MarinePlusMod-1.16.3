@@ -42,7 +42,7 @@ public class ModInits
 
     //Items
     public static final RegistryObject<ModSpawnEggItem> TUNA_SPAWN_EGG = ITEMS.register("tuna_spawn_egg",
-            () -> new ModSpawnEggItem(TUNA, 0xA3A9B2, 0x889CC1, new Item.Properties().group(ItemGroup.MISC)));
+            () -> new ModSpawnEggItem(TUNA, 0x889CC1, 0xA3A9B2, new Item.Properties().group(ItemGroup.MISC)));
 
     //Blocks
     public static final RegistryObject<Block> PLATINUM_BLOCK = BLOCKS.register("platinum_block", PlatinumBlock::new);
