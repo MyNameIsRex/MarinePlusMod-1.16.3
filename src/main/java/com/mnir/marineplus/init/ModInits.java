@@ -4,6 +4,7 @@ import com.mnir.marineplus.MarinePlusMod;
 import com.mnir.marineplus.blocks.PlatinumBlock;
 import com.mnir.marineplus.entities.TunaEntity;
 import com.mnir.marineplus.items.ModSpawnEggItem;
+import com.mnir.marineplus.items.RawTunaItem;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -43,6 +44,10 @@ public class ModInits
     //Items
     public static final RegistryObject<ModSpawnEggItem> TUNA_SPAWN_EGG = ITEMS.register("tuna_spawn_egg",
             () -> new ModSpawnEggItem(TUNA, 0x889CC1, 0xA3A9B2, new Item.Properties().group(ItemGroup.MISC)));
+
+    //Fish Items
+    public static final RegistryObject<RawTunaItem> RAW_TUNA = ITEMS.register("raw_tuna",
+            RawTunaItem::new);
 
     //Blocks
     public static final RegistryObject<Block> PLATINUM_BLOCK = BLOCKS.register("platinum_block", PlatinumBlock::new);
