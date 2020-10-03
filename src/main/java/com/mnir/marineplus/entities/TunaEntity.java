@@ -14,6 +14,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
+@SuppressWarnings("EntityConstructor")
 public class TunaEntity extends AbstractGroupFishEntity
 {
     public TunaEntity(EntityType<? extends AbstractGroupFishEntity> type, World world)
@@ -24,7 +25,7 @@ public class TunaEntity extends AbstractGroupFishEntity
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().
-                createMutableAttribute(Attributes.MAX_HEALTH, 35.0D).
+                createMutableAttribute(Attributes.MAX_HEALTH, 3.0D).
                 createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.75D);
     }
 
