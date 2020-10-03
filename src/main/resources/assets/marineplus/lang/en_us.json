@@ -1,4 +1,6 @@
 {
   "entity.marineplus.tuna": "Tuna",
-  "item.marineplus.tuna_spawn_egg": "Tuna Spawn Egg"
+  "item.marineplus.tuna_spawn_egg": "Tuna Spawn Egg",
+  "item.marineplus.raw_tuna": "Raw Tuna",
+  "item.marineplus.cooked_tuna": "Cooked Tuna"
 }
