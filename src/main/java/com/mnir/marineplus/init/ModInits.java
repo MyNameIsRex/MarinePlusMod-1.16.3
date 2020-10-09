@@ -2,6 +2,7 @@ package com.mnir.marineplus.init;
 
 import com.mnir.marineplus.MarinePlusMod;
 import com.mnir.marineplus.blocks.PlatinumBlock;
+import com.mnir.marineplus.entities.SwordfishEntity;
 import com.mnir.marineplus.entities.TunaEntity;
 import com.mnir.marineplus.items.CookedTunaItem;
 import com.mnir.marineplus.items.ModSpawnEggItem;
@@ -41,6 +42,9 @@ public class ModInits
     public static final RegistryObject<EntityType<TunaEntity>> TUNA = ENTITIES.register("tuna", () ->
             EntityType.Builder.create(TunaEntity::new, EntityClassification.WATER_CREATURE).size(0.5F, 0.3F)
                     .build(new ResourceLocation(MarinePlusMod.MODID, "tuna").toString()));
+    public static final RegistryObject<EntityType<SwordfishEntity>> SWORDFISH = ENTITIES.register("swordfish", () ->
+            EntityType.Builder.create(SwordfishEntity::new, EntityClassification.WATER_CREATURE).size(0.5F,0.3F)
+                    .build(new ResourceLocation(MarinePlusMod.MODID, "swordfish").toString()));
 
     //Spawn egg Items
     public static final RegistryObject<ModSpawnEggItem> TUNA_SPAWN_EGG = ITEMS.register("tuna_spawn_egg",
