@@ -1,5 +1,6 @@
 package com.mnir.marineplus;
 
+import com.mnir.marineplus.entities.SwordfishEntity;
 import com.mnir.marineplus.entities.TunaEntity;
 import com.mnir.marineplus.init.ModInits;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
@@ -35,6 +36,7 @@ public class MarinePlusMod
         DeferredWorkQueue.runLater(() ->
         {
             GlobalEntityTypeAttributes.put(ModInits.TUNA.get(), TunaEntity.setCustomAttributes().create());
+            GlobalEntityTypeAttributes.put(ModInits.SWORDFISH.get(), SwordfishEntity.setCustomAttributes().create());
         });
     }
 
