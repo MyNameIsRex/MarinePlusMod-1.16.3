@@ -14,7 +14,7 @@ public class TunaRenderer extends MobRenderer<TunaEntity, TunaModel<TunaEntity>>
 
     public TunaRenderer(EntityRendererManager renderManagerIn)
     {
-        super(renderManagerIn, new TunaModel<>(), 0.7F);
+        super(renderManagerIn, new TunaModel<>(), 0.35F);
     }
 
     @Override

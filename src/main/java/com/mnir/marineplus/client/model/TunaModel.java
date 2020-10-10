@@ -52,7 +52,8 @@ public class TunaModel <T extends TunaEntity> extends EntityModel<T>
                                   float netHeadYaw, float headPitch)
     {
         float f = 1.0F;
-        if (!entityIn.isInWater()) {
+        if (!entityIn.isInWater())
+        {
             f = 1.5F;
         }
 
