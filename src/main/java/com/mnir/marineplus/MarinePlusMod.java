@@ -1,5 +1,6 @@
 package com.mnir.marineplus;
 
+import com.mnir.marineplus.entities.GoldfishEntity;
 import com.mnir.marineplus.entities.SwordfishEntity;
 import com.mnir.marineplus.entities.TunaEntity;
 import com.mnir.marineplus.init.ModInits;
@@ -37,6 +38,7 @@ public class MarinePlusMod
         {
             GlobalEntityTypeAttributes.put(ModInits.TUNA.get(), TunaEntity.setCustomAttributes().create());
             GlobalEntityTypeAttributes.put(ModInits.SWORDFISH.get(), SwordfishEntity.setCustomAttributes().create());
+            GlobalEntityTypeAttributes.put(ModInits.GOLDFISH.get(), GoldfishEntity.setCustomAttributes().create());
         });
     }
 
