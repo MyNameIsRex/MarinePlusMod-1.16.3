@@ -9,6 +9,7 @@ import net.minecraft.entity.ai.goal.FindWaterGoal;
 import net.minecraft.entity.ai.goal.GoalSelector;
 import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.passive.fish.AbstractFishEntity;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -16,8 +17,6 @@ import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
 
 @SuppressWarnings("EntityConstructor")
 public class GoldfishEntity extends AbstractFishEntity
@@ -27,8 +26,8 @@ public class GoldfishEntity extends AbstractFishEntity
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().
-                createMutableAttribute(Attributes.MAX_HEALTH, 1.5D).
-                createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.7D);
+                createMutableAttribute(Attributes.MAX_HEALTH, 3.0D).
+                createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.75D);
     }
 
     @Override
@@ -37,28 +36,31 @@ public class GoldfishEntity extends AbstractFishEntity
         GoalSelector selector = this.goalSelector;
         super.registerGoals();
         selector.addGoal(0, new FindWaterGoal(this));
-        selector.addGoal(1, new PanicGoal(this, 0.95D));
+        selector.addGoal(1, new PanicGoal(this, 1.50D));
         selector.addGoal(2, new AvoidEntityGoal<>(this, PlayerEntity.class,
                 12.0F, 1.6D, 1.4D, EntityPredicates.NOT_SPECTATING::test));
     }
 
-    @Override
-    protected ItemStack getFishBucket() { return null;}
+    protected int getExperiencePoints(PlayerEntity player)
+    {
+        return 1 + this.world.rand.nextInt(9);
+    }
 
-    @Override
-    protected SoundEvent getFlopSound() { return SoundEvents.ENTITY_COD_FLOP; }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource damageSourceIn) { return SoundEvents.ENTITY_COD_HURT; }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() { return SoundEvents.ENTITY_COD_DEATH; }
-
-    @Nullable
     @Override
     protected SoundEvent getAmbientSound() { return SoundEvents.ENTITY_COD_AMBIENT; }
 
-    protected int getExperiencePoints(PlayerEntity player) { return 1 + this.world.rand.nextInt(9); }
+    @Override
+    protected SoundEvent getDeathSound() { return SoundEvents.ENTITY_COD_DEATH; }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSourceIn) { return SoundEvents.ENTITY_COD_HURT; }
+
+    @Override
+    protected void playSwimSound(float volume) { this.playSound(SoundEvents.ENTITY_FISH_SWIM, 0.15F, 1.0F); }
+
+    @Override
+    protected ItemStack getFishBucket() { return null; }
+
+    @Override
+    protected SoundEvent getFlopSound() { return SoundEvents.ENTITY_COD_FLOP; }
 }
