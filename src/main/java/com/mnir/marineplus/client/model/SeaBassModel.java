@@ -3,6 +3,7 @@ package com.mnir.marineplus.client.model;
 import com.mnir.marineplus.entities.SeaBassEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.client.renderer.entity.model.CodModel;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.math.MathHelper;
@@ -57,7 +58,7 @@ public class SeaBassModel <T extends SeaBassEntity> extends EntityModel<T>
             f = 1.5F;
         }
 
-        this.tailFin.rotateAngleY = -f * 0.25F * MathHelper.sin(0.6F * ageInTicks) - 1.5708F;
+        this.tailFin.rotateAngleY = -f * 0.25F * MathHelper.sin(0.6F * ageInTicks);
     }
 
     @Override
