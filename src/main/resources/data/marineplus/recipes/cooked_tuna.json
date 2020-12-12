@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "marineplus:raw_tuna"
+  },
+  "result": "marineplus:cooked_tuna",
+  "experience": 7.5,
+  "cookingtime": 200
+}
