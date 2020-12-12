@@ -63,6 +63,9 @@ public class ModInits
     public static final RegistryObject<ModSpawnEggItem> GOLDFISH_SPAWN_EGG = ITEMS.register("goldfish_spawn_egg",
             () -> new ModSpawnEggItem(GOLDFISH, 0xFF7819, 0xFFC519,
                     new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<ModSpawnEggItem> SEA_BASS_SPAWN_EGG = ITEMS.register("sea_bass_spawn_egg",
+            () -> new ModSpawnEggItem(SEA_BASS, 0xADADAD, 0x848484,
+                    new Item.Properties().group(ItemGroup.MISC)));
 
     //Fish Items
     public static final RegistryObject<RawTunaItem> RAW_TUNA = ITEMS.register("raw_tuna",

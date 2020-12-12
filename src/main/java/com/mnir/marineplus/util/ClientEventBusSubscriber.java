@@ -2,6 +2,7 @@ package com.mnir.marineplus.util;
 
 import com.mnir.marineplus.MarinePlusMod;
 import com.mnir.marineplus.client.render.GoldfishRenderer;
+import com.mnir.marineplus.client.render.SeaBassRenderer;
 import com.mnir.marineplus.client.render.SwordfishRenderer;
 import com.mnir.marineplus.client.render.TunaRenderer;
 import com.mnir.marineplus.init.ModInits;
@@ -25,6 +26,8 @@ public class ClientEventBusSubscriber
                 SwordfishRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModInits.GOLDFISH.get(),
                 GoldfishRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModInits.SEA_BASS.get(),
+                SeaBassRenderer::new);
     }
 
     @SubscribeEvent

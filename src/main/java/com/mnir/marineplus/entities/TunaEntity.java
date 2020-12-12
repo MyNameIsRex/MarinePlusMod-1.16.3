@@ -4,7 +4,10 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.entity.ai.goal.FindWaterGoal;
+import net.minecraft.entity.ai.goal.GoalSelector;
+import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -35,7 +38,6 @@ public class TunaEntity extends AbstractGroupFishEntity
         selector.addGoal(1, new PanicGoal(this, 1.50D));
         selector.addGoal(2, new AvoidEntityGoal<>(this, PlayerEntity.class,
                 12.0F, 1.6D, 1.4D, EntityPredicates.NOT_SPECTATING::test));
-        selector.addGoal(3, new FollowSchoolLeaderGoal(this));
     }
 
     protected int getExperiencePoints(PlayerEntity player)
